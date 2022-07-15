@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use VasArt\NaughtyWords\NaughtyWords;
 
 class NaughtyWordsTest extends TestCase
 {
@@ -13,7 +14,7 @@ class NaughtyWordsTest extends TestCase
 
         $naughtyWordsRu = NaughtyWords::getForLanguage('ru');
 
-        $this->assertIsArray($naughtyWordsRu);
+        $this->assertIsArray($naughtyWordsRu, 'Returned non-array!');
         $this->assertContains('byk', $naughtyWordsRu, 'Russian words does not contain word \'byk\'!');
     }
 }

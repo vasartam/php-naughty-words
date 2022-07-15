@@ -1,5 +1,7 @@
 <?php
 
+namespace VasArt\NaughtyWords;
+
 class NaughtyWords
 {
     public static function getForLanguage(string $language)
