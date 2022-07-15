@@ -36,7 +36,7 @@ class Validator
         $matchResults = [];
 
         foreach ($this->wordsLists as $language => $wordsList) {
-            $regex = $wordsList->getAsRegex();
+            $regex = $wordsList->getRegex();
 
             $matchResult = preg_match($regex, $text, $matches);
 

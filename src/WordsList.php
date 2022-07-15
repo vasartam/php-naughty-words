@@ -5,9 +5,28 @@ namespace VasArt\NaughtyWords;
 class WordsList
 {
     /**
+     * The list of naughty words.
+     *
      * @var string[]
      */
     private $words;
+
+    /**
+     * The list of naughty words as a PCRE regex.
+     *
+     * @var string
+     */
+    private $regex;
+
+    /**
+     * Get regex.
+     *
+     * @return string
+     */
+    public function getRegex(): string
+    {
+        return $this->regex;
+    }
 
     /**
      * @param string[] $words
@@ -18,6 +37,7 @@ class WordsList
         $words = array_filter($words);
 
         $this->words = $words;
+        $this->updateRegex();
     }
 
     /**
@@ -39,17 +59,26 @@ class WordsList
     public function add(string $word)
     {
         $this->words[] = $word;
+        $this->updateRegex();
     }
 
     /**
-     * Get the list of naughty words as a PCRE regex.
+     * Update stored regex using current words list.
+     *
+     * @return void
+     */
+    private function updateRegex()
+    {
+        $this->regex = $this->buildRegex();
+    }
+
+    /**
+     * Build regex from current words list.
      *
      * @return string
      */
-    public function getAsRegex(): string
+    private function buildRegex(): string
     {
-        $words = $this->words;
-
         // Cyrillic characters borrowed from:
         // https://stackoverflow.com/a/52257128/12320578
         $wordChars = '[a-zA-ZЁёА-я]';
@@ -57,7 +86,7 @@ class WordsList
 
         return sprintf(
             "/$wordBoundary(?<word>(?:%s)+)$wordBoundary/",
-            implode('|', $words)
+            implode('|', $this->words)
         );
     }
 }
