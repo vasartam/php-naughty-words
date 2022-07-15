@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d21db2e6-821c-4dbd-a3f1-09b425a96517" name="Changes" comment="">
+    <list default="true" id="d21db2e6-821c-4dbd-a3f1-09b425a96517" name="Changes" comment="Add code style">
+      <change afterPath="$PROJECT_DIR$/src/Validator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WordsList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ValidatorTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NaughtyWords.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/NaughtyWords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/NaughtyWordsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/NaughtyWordsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +83,33 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="WSL" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="WSL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../php-naughty-words_old" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="PHPUnit.ValidatorTest">
+    <configuration name="NaughtyWordsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="NaughtyWordsTest" file="$PROJECT_DIR$/test/NaughtyWordsTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ValidatorTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="VasArt\NaughtyWords\ValidatorTest" file="$PROJECT_DIR$/test/ValidatorTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ValidatorTest" />
+        <item itemvalue="PHPUnit.NaughtyWordsTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,11 +120,50 @@
       <option name="presentableId" value="Default" />
       <updated>1657824022622</updated>
       <workItem from="1657824025102" duration="169000" />
-      <workItem from="1657868215648" duration="713000" />
+      <workItem from="1657868215648" duration="7749000" />
     </task>
+    <task id="LOCAL-00001" summary="Add namespace">
+      <created>1657868979491</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657868979491</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Tweak config">
+      <created>1657868991018</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657868991018</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add code style">
+      <created>1657869011892</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657869011892</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add namespace" />
+    <MESSAGE value="Tweak config" />
+    <MESSAGE value="Add code style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add code style" />
   </component>
 </project>
