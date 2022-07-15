@@ -47,6 +47,8 @@ class Validator
      */
     public function findNaughtyWords(string $text): array
     {
+        $text = mb_strtolower($text, 'UTF-8');
+
         $matchResults = [];
 
         foreach ($this->wordsLists as $language => $wordsList) {
