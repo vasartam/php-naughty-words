@@ -1,14 +1,59 @@
-# Our List of Dirty, Naughty, Obscene, and Otherwise Bad Words #
+# php-naughty-words
 
-[//]: # (TODO: Update README)
+A [List of Dirty, Naughty, Obscene, and Otherwise Bad Words](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words) to use in PHP via [Composer](https://getcomposer.org/).
 
-With millions of images in our library and billions of user-submitted keywords, we work hard at Shutterstock to make sure that bad words don't show up in places they shouldn't.  This repo contains a list of words that we use to filter results from our autocomplete server and recommendation engine.
+**Obvious warning**: These lists contain material that many will find offensive. (But that's the point!)
 
-Please add to it as you see fit (particularly in non-English languages) or use it to spice up your next game of Scrabble :)
+## Before you start
 
-Obvious warning: These lists contain material that many will find offensive.  (But that's the point!)
+If you think that implementing an automatic filter of bad words is a good idea, you should really check these articles first:
 
-Miscellaneous caveat: Clearly, what goes in these lists is subjective.  In our case, the question we use is, "What wouldn't we want to *suggest* that people look at?"  This of course varies between culture, language, and geographies, so in the end we just have to make our best guess.
++ [Obscenity Filters: Bad Idea, or Incredibly Intercoursing Bad Idea?](https://blog.codinghorror.com/obscenity-filters-bad-idea-or-incredibly-intercoursing-bad-idea/)
++ [Scunthorpe problem](https://en.wikipedia.org/wiki/Scunthorpe_problem)
+
+To sum it up, this library by no way should be used as a 100% way to get rid of obscene language in your application. People will always find out ways to bypass your filters. If you need to handle bad words, you need manual control. Tools like this one are meant to assist human moderation, not to replace it.
+
+Use cases, where this library might be of use:
+
+1. Requesting an approval from a moderator after user input validation when potentially bad words are found.
+2. Refuse user input only when an exact match of a bad word is found.<br>
+   (This is easily bypassed when a bad word is given one more arbitrary letter, just so the exact match won't succeed.)
+
+## Installation 
+
+```bash
+composer require vasart/naughty-words
+```
+
+## Usage
+
+Receiving a plain list of naughty words:
+
+```php
+use VasArt\NaughtyWords\NaughtyWords;
+
+$naughtyWordsEn = NaughtyWords::getForLanguage('en');
+```
+
+The string `'en'` inside `getForLanguage()` call here is the name of the file with bad words for the language of choice. See the list of available languages in [Languages](#Languages) section.
+
+Using built-in validator:
+
+```php
+use VasArt\NaughtyWords\Validator;
+
+$text = 'some user input with potentially bad words';
+
+$naughtyWordsValidator = new Validator( [ 'en', 'ru' ] );
+$naughtyWords = $naughtyWordsValidator->findNaughtyWords( $text );
+
+var_export($naughtyWords); // [ 'en' => 'word', 'ru' => false ]
+```
+
+For examining how does built-in validator work you can check:
+
++ test cases inside [ValidatorTest](test/ValidatorTest.php) class;
++ regular expression that is built inside [WordsList](src/WordsList.php) class.
 
 ## Languages
 
@@ -43,26 +88,18 @@ Miscellaneous caveat: Clearly, what goes in these lists is subjective.  In our c
 | [Thai](th)                         | th                |
 | [Turkish](tr)                      | tr                |
 
-See also the [list of projects, documents, and organizations](USERS.md) that use these lists.
+## Other installation methods
 
-## Composer
+If you need to use bad words inside an `npm` project, you can install the word list using the [naughty-words](https://github.com/LDNOOBW/naughty-words-js) package.
 
-If you are using the word lists in a [Composer](https://getcomposer.org/) project, you can install the word list using the [vasart/naughty-words](https://github.com/vasartam/php-naughty-words) package.
+## License
 
-```bash
-composer require vasart/naughty-words
-```
+The code, configuration and project description files are licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-## Node Module
+The list of words is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). See `LICENSE.words` file at the repository root. © 2012–2020 Shutterstock, Inc.
 
-If you are using the word lists as `.json`, or in an `npm` project, you can install the word list using the [naughty-words](https://github.com/LDNOOBW/naughty-words-js) package.
+## More naughty words
 
-```bash
-npm install naughty-words
-```
-
-© 2012–2020 Shutterstock, Inc.
-
-[![Creative Commons License](http://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)
-
-This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
++ [expletives](https://github.com/alvations/expletives)
++ [google-profanity-words](https://github.com/coffee-and-fun/google-profanity-words)
++ [encycloDB / Dirty Words](https://github.com/turalus/encycloDB/tree/master/Dirty%20Words)
