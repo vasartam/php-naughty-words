@@ -50,7 +50,7 @@ $naughtyWords = $naughtyWordsValidator->findNaughtyWords( $text );
 var_export($naughtyWords); // [ 'en' => 'word', 'ru' => false ]
 ```
 
-For examining how does built-in validator work you can check:
+For examining how does built-in validator work exactly you should check:
 
 + test cases inside [ValidatorTest](test/ValidatorTest.php) class;
 + regular expression that is built inside [WordsList](src/WordsList.php) class.
