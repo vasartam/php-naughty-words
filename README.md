@@ -94,9 +94,9 @@ If you need to use bad words inside an `npm` project, you can install the word l
 
 ## License
 
-The code, configuration and project description files are licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+The code, configuration and project description files are licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), see [LICENSE](LICENSE).
 
-The list of words is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). See `LICENSE.words` file at the repository root. © 2012–2020 Shutterstock, Inc.
+The list of words is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/), see [LICENSE.words](LICENSE.words). © 2012–2020 Shutterstock, Inc.
 
 ## More naughty words
 
