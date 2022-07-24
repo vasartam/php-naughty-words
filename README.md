@@ -88,7 +88,7 @@ For examining how does built-in validator work you can check:
 | [Thai](th)                         | th                |
 | [Turkish](tr)                      | tr                |
 
-## Other installation methods
+## Other installation options
 
 If you need to use bad words inside an `npm` project, you can install the word list using the [naughty-words](https://github.com/LDNOOBW/naughty-words-js) package.
 
